@@ -2,9 +2,10 @@ import requests
 import time
 import logging
 import sys
+import pathlib
 
 #Update path
-sys.path.append("path_to_folder/SellingPartnerAPIAuthAndAuthPython")
+sys.path.append(str(pathlib.Path(__file__).parent.parent))
 
 from auth.LwaException import LwaException
 from auth.LwaExceptionErrorCode import LwaExceptionErrorCode

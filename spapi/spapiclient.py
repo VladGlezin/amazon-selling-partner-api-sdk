@@ -2,15 +2,16 @@ import os
 import sys
 import logging
 import backoff
+import pathlib
 from requests.exceptions import HTTPError
 
 #Update Path
-sys.path.append('path_to_folder/SellingPartnerAPIAuthAndAuthPython/client/orders')
+sys.path.append(str(pathlib.Path(__file__).parent.parent/'client/api'))
 from swagger_client.configuration import Configuration
 from swagger_client.api_client import ApiClient
 
 #Update Path
-sys.path.append('path_to_folder/SellingPartnerAPIAuthAndAuthPython')
+sys.path.append(str(pathlib.Path(__file__).parent.parent))
 from auth.LwaRequest import AccessTokenCache
 
 logging.basicConfig(level=logging.INFO)
