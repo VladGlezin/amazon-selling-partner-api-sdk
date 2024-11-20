@@ -29,9 +29,9 @@ from swagger_client import rest
 
 
 class ApiClient(object):
-    """Generic API client for Swagger client library builds.
+    """Generic API SellingPartnerAPISDK for Swagger SellingPartnerAPISDK library builds.
 
-    Swagger generic API client. This client handles the client-
+    Swagger generic API SellingPartnerAPISDK. This SellingPartnerAPISDK handles the SellingPartnerAPISDK-
     server communication, and is invariant across implementations. Specifics of
     the methods and models for each application are generated from the Swagger
     templates.
@@ -40,7 +40,7 @@ class ApiClient(object):
     Ref: https://github.com/swagger-api/swagger-codegen
     Do not edit the class manually.
 
-    :param configuration: .Configuration object for this client
+    :param configuration: .Configuration object for this SellingPartnerAPISDK
     :param header_name: a header to pass when making calls to the API.
     :param header_value: a header value to pass when making calls to
         the API.
@@ -90,7 +90,7 @@ class ApiClient(object):
 
     @property
     def user_agent(self):
-        """User agent for this API client"""
+        """User agent for this API SellingPartnerAPISDK"""
         return self.default_headers['User-Agent']
 
     @user_agent.setter

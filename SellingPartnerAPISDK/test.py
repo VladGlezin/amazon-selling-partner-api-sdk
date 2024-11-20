@@ -1,20 +1,20 @@
 if __name__ == "__main__":
     print("Starting the Script...")
 
-    from auth.credentials import SPAPIConfig
+    from SellingPartnerAPISDK.auth import SPAPIConfig
     # User inputs their credentials in the config
     config = SPAPIConfig(
-        client_id="Your Client-id",
-        client_secret="Your Client-secret",
-        refresh_token="Your Refresh-token",
-        region="SANDBOX",  # Possible values NA, EU, FE, and SANDBOX
+        client_id='amzn1.application-oa2-SellingPartnerAPISDK.029eabd19b744637bfef6510accd058b',
+        client_secret = 'amzn1.oa2-cs.v1.297d22bf0447d84b1f33240d47cab210a11612e59c921bcbc5f05109bcebe843',
+        refresh_token = """Atzr|IwEBIB5RgnPEIUYE6KxsIgMFyBi2dKPaeI5Gx4CnHu2C8zGY0sOUy_GJXrvTO539lIQfJXByGK37oeQdhvjke1kRiJdYuKGmP-YsrRoGZjyTN2PGq4YRkouloL7B2QXNAEO4Vv_nYhnwTLbEixrWPXCJ4kGkUUdgri21B5MQKQdOTPaBbFnzut9PT99xUhEnmSwDmggBpd9yUIL9OTzezTycn-oSH35888rxB8_jSao62F99_DrN5sqlSPSggz7nPduTJMKrcCIuffJt8YmQDDqFIFJfY0bgsNxTTRpUEeIGSPKcjbD6XdLHoJXbGKS0OJpNvQ4""",
+        region="NA",  # Possible values NA, EU, FE, and SANDBOX
         scope = None # Required for grant_type='client_credentials' ; Possible values "sellingpartnerapi::notifications" and "sellingpartnerapi::migration"
     )
 
-    from spapi.spapiclient import SPAPIClient
+    from SellingPartnerAPISDK.spapi.spapiclient import SPAPIClient
 
     # Create the API Client
-    print("Config and client initialized...")
+    print("Config and SellingPartnerAPISDK initialized...")
     api_client = SPAPIClient(config)
 
     marketplace_ids = ["ATVPDKIKX0DER"]

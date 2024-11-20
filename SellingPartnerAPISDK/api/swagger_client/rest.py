@@ -27,7 +27,7 @@ from six.moves.urllib.parse import urlencode
 try:
     import urllib3
 except ImportError:
-    raise ImportError('Swagger python client requires urllib3.')
+    raise ImportError('Swagger python SellingPartnerAPISDK requires urllib3.')
 
 
 logger = logging.getLogger(__name__)
@@ -57,7 +57,7 @@ class RESTClientObject(object):
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75  # noqa: E501
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680  # noqa: E501
         # maxsize is the number of requests to host that are allowed in parallel  # noqa: E501
-        # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
+        # Custom SSL certificates and SellingPartnerAPISDK certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
 
         # cert_reqs
         if configuration.verify_ssl:

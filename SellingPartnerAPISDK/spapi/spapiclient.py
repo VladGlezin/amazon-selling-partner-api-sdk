@@ -1,4 +1,3 @@
-import os
 import sys
 import logging
 import backoff
@@ -6,13 +5,13 @@ import pathlib
 from requests.exceptions import HTTPError
 
 #Update Path
-sys.path.append(str(pathlib.Path(__file__).parent.parent/'client/api'))
+sys.path.append(str(pathlib.Path(__file__).parent.parent/'api'))
 from swagger_client.configuration import Configuration
 from swagger_client.api_client import ApiClient
 
 #Update Path
 sys.path.append(str(pathlib.Path(__file__).parent.parent))
-from auth.LwaRequest import AccessTokenCache
+from SellingPartnerAPISDK.auth.LwaRequest import AccessTokenCache
 
 logging.basicConfig(level=logging.INFO)
 
@@ -61,4 +60,4 @@ class SPAPIClient:
             api_class = getattr(module, api_name)
             return api_class(self.api_client)
         except AttributeError:
-            raise Exception(f"API client for {api_name} not found.")
+            raise Exception(f"API SellingPartnerAPISDK for {api_name} not found.")

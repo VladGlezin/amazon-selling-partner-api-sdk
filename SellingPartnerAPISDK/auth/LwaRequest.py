@@ -7,8 +7,8 @@ import pathlib
 #Update path
 sys.path.append(str(pathlib.Path(__file__).parent.parent))
 
-from auth.LwaException import LwaException
-from auth.LwaExceptionErrorCode import LwaExceptionErrorCode
+from SellingPartnerAPISDK.auth.LwaException import LwaException
+from SellingPartnerAPISDK.auth.LwaExceptionErrorCode import LwaExceptionErrorCode
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

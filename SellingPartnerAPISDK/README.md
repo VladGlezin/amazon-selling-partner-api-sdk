@@ -78,18 +78,18 @@ With authentication set up, you're now ready to set up the Python SDK package.
 
 ```python
   from setuptools import setup, find_packages
-	 
-  setup(
-      name='SellingPartnerAPIAuthAndAuthPython',  # Replace with your package's name
-      version='1.0.0',         # Replace with your package's version 
-      package_dir={'': 'src'},  # Replace 'src' as necessary
-      packages=find_packages(where='src'),
-      install_requires=[line.strip() for line in open("requirements.txt", "r")],
-      description='A Python SDK for Amazon Selling Partner API',
-      long_description=open('README.md').read(),
-      long_description_content_type='text/markdown',
-      url='TBD'
-  )
+
+setup(
+   name='SellingPartnerAPIAuthAndAuthPython',  # Replace with your package's name
+   version='1.0.0',  # Replace with your package's version 
+   package_dir={'': 'src'},  # Replace 'src' as necessary
+   packages=find_packages(where='src'),
+   install_requires=[line.strip() for line in open("requirements.txt", "r")],
+   description='A Python SDK for Amazon Selling Partner API',
+   long_description=open('README.md').read(),
+   long_description_content_type='text/markdown',
+   url='TBD'
+)
 ```
 
 With the Python SDK set up, you're now ready to interact with the SP-API endpoints.
@@ -100,29 +100,30 @@ The following is an example of how to use the Python SDK with the Orders API to 
 
 ```python
   if __name__ == "__main__":
-	 
-      from auth.credentials import SPAPIConfig
-      config = SPAPIConfig(
-          client_id="Your client-id",
-          client_secret="Your client-secret",
-          refresh_token="Your refresh-token",
-          region="NA",  # Possible values NA, EU, FE, and SANDBOX
-          scope = None # Required for grant_type='client_credentials' ; Possible values "sellingpartnerapi::notifications" and "sellingpartnerapi::migration"
-      )
-	 
-      from spapi.spapiclient import SPAPIClient
-	 
-      # Create the API Client
-      print("Config and client initialized...")
-      api_client = SPAPIClient(config)
-	 
-      marketplace_ids = ["ATVPDKIKX0DER"]
-      created_after = "2024-01-19T00:00:00"
-	 
-      orders_api = api_client.get_api_client('OrdersV0Api')
-      orders_response = orders_api.get_orders(marketplace_ids=marketplace_ids, created_after=created_after)
-      print("Orders API Response:")
-      print(orders_response)
+   from SellingPartnerAPISDK.auth import SPAPIConfig
+
+   config = SPAPIConfig(
+      client_id="Your SellingPartnerAPISDK-id",
+      client_secret="Your SellingPartnerAPISDK-secret",
+      refresh_token="Your refresh-token",
+      region="NA",  # Possible values NA, EU, FE, and SANDBOX
+      scope=None
+      # Required for grant_type='client_credentials' ; Possible values "sellingpartnerapi::notifications" and "sellingpartnerapi::migration"
+   )
+
+   from SellingPartnerAPISDK.spapi.spapiclient import SPAPIClient
+
+   # Create the API Client
+   print("Config and SellingPartnerAPISDK initialized...")
+   api_client = SPAPIClient(config)
+
+   marketplace_ids = ["ATVPDKIKX0DER"]
+   created_after = "2024-01-19T00:00:00"
+
+   orders_api = api_client.get_api_client('OrdersV0Api')
+   orders_response = orders_api.get_orders(marketplace_ids=marketplace_ids, created_after=created_after)
+   print("Orders API Response:")
+   print(orders_response)
 ```
 
 > 🚧 Caution

@@ -77,9 +77,9 @@ class Configuration(object):
         self.verify_ssl = True
         # Set this to customize the certificate file to verify the peer.
         self.ssl_ca_cert = None
-        # client certificate file
+        # SellingPartnerAPISDK certificate file
         self.cert_file = None
-        # client key file
+        # SellingPartnerAPISDK key file
         self.key_file = None
         # Set this to True/False to enable/disable SSL hostname verification.
         self.assert_hostname = None
@@ -96,7 +96,7 @@ class Configuration(object):
         # Safe chars for path_param
         self.safe_chars_for_path_param = ''
 
-        # Disable client side validation
+        # Disable SellingPartnerAPISDK side validation
         self.client_side_validation = True
 
     @classmethod
@@ -230,7 +230,7 @@ class Configuration(object):
         return token
 
     def auth_settings(self):
-        """Gets Auth Settings dict for api client.
+        """Gets Auth Settings dict for api SellingPartnerAPISDK.
 
         :return: The Auth Settings information dict.
         """

@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
-from auth.LwaRequest import AccessTokenCache
-from auth.LwaException import LwaException
+from SellingPartnerAPISDK.auth.LwaRequest import AccessTokenCache
+from SellingPartnerAPISDK.auth.LwaException import LwaException
 
 class TestAccessTokenCache(unittest.TestCase):
 
